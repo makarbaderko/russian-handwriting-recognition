@@ -32,7 +32,7 @@ function App() {
           <p className='heading'>Draw a Cyrillic Letter</p>
           <Canvas></Canvas>
           <button className='btn'>Predict</button>
-          <p className='text'>It is letter</p>
+          <p className='text'>It's letter</p>
         </div>
       </body>
     </div>
