@@ -3,7 +3,7 @@
     src: url("./assets/supermercado.ttf") format("truetype");
   }
 
-.test {
+.heading {
     color:rgb(255, 255, 255);
     position: absolute;
     font-family: 'supermercado';
@@ -21,4 +21,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn {
+    position: absolute;
+    margin-top: 30%;
+    font-family: 'supermercado';
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    background-color: white;
+    width: 10%;
+    height: 4em
 }
