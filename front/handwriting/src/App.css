@@ -1,0 +1,24 @@
+@font-face {
+    font-family:"supermercado";
+    src: url("./assets/supermercado.ttf") format("truetype");
+  }
+
+.test {
+    color:rgb(255, 255, 255);
+    position: absolute;
+    font-family: 'supermercado';
+    font-size: 100px;
+    margin-top: 10%;
+}
+.bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+}
+
+.mainDiv {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
