@@ -2,6 +2,9 @@
 import './App.css'
 import bg from './assets/bg.jpg';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
+import * as tf from '@tensorflow/tfjs';
+
+const model = await tf.loadLayersModel('localstorage://my-model-1');
 
 const styles = {
   position: 'absolute',
