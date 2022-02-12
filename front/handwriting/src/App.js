@@ -2,10 +2,16 @@
 import './App.css'
 import bg from './assets/bg.jpg';
 import { ReactSketchCanvas } from 'react-sketch-canvas';
-import * as tf from '@tensorflow/tfjs';
 
-const model = tf.loadGraphModel('https://raw.githubusercontent.com/makarbaderko/russian-handwriting-recognition/master/back/tfjs/model.json');
-console.log(model.predict([1]))
+console.log("Logging....")
+const spawn = require('child_process').spawn
+const process = spawn('python3', ['../../back/model.py', './../back/data/v.png', '../../back/model.h5'])
+process.stdout.on('data', data => {
+  console.log(data.toString());
+});
+
+
+
 const styles = {
   position: 'absolute',
   marginTop: '30%',

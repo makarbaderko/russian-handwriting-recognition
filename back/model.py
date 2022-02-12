@@ -11,7 +11,8 @@ logging.getLogger("tensorflow").setLevel(logging.ERROR)
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
-data = sys.argv[1]
+image_path = sys.argv[1]
+model_path = sys.argv[2]
 model = tf.keras.models.Sequential([
   layers.Rescaling(1./255, input_shape=(32, 32, 3)),
   layers.Conv2D(16, 3, padding='same', activation='relu'),
@@ -24,7 +25,7 @@ model = tf.keras.models.Sequential([
   layers.Dense(128, activation='relu'),
   layers.Dense(66)
 ])
-model.load_weights('model.h5')
+model.load_weights(model_path)
 model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
@@ -35,7 +36,7 @@ alphabet = ["а","б","в","г","д","е","ё","ж","з","и","й","к","л","м
 alphabet = alphabet + [x.upper() for x in alphabet]
 
 
-image = Image.open(data)
+image = Image.open(image_path)
 #print(image.mode)
 image.load()
 new = Image.new("RGB", image.size, (255, 255, 255))
